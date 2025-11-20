@@ -1,27 +1,447 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-		/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Globe</title>
-		<!-- Favicon -->
-		<link rel="icon" href="/favicon.ico" sizes="any" />
-		<!-- Primary Meta Tags -->
-		<meta name="title" content="PartyServer" />
-		<meta name="description" content="Everything's better with friends!" />
-		<meta name="author" content="PartyServer" />
-		<!-- Theme Colour -->
-		<meta name="theme-color" content="#ffffff" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSR IT Solution - Secure, Scalable, Reliable</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease;
+        }
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-blue-800">SSR IT Solution</h1>
+                    <span class="ml-2 text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Secure, Scalable, Reliable</span>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-blue-800 font-medium hover:text-blue-600">Home</a>
+                    <a href="#services" class="text-gray-600 font-medium hover:text-blue-600">Services</a>
+                    <a href="#products" class="text-gray-600 font-medium hover:text-blue-600">Products</a>
+                    <a href="#about" class="text-gray-600 font-medium hover:text-blue-600">About Us</a>
+                    <a href="#contact" class="text-gray-600 font-medium hover:text-blue-600">Contact</a>
+                </nav>
+                
+                <button class="md:hidden text-gray-600 focus:outline-none" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden py-4 border-t" id="mobile-menu">
+                <a href="#home" class="block py-2 text-blue-800 font-medium">Home</a>
+                <a href="#services" class="block py-2 text-gray-600 font-medium">Services</a>
+                <a href="#products" class="block py-2 text-gray-600 font-medium">Products</a>
+                <a href="#about" class="block py-2 text-gray-600 font-medium">About Us</a>
+                <a href="#contact" class="block py-2 text-gray-600 font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
 
-		<link rel="stylesheet" href="/normalize.css" />
-		<link rel="stylesheet" href="/dist/index.css" />
-	</head>
-	<body>
-		<div id="root">Loading...</div>
-		<script type="module" src="/dist/index.js"></script>
-	</body>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Digital Transformation for Your Business</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">We provide secure, scalable, and reliable IT solutions to help your business thrive in the digital age.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">Our Services</a>
+                <a href="#products" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300">Our Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We offer a comprehensive range of IT consulting services to help businesses transform and grow.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-laptop-code text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Digital Strategy & Consulting</h3>
+                    <p class="text-gray-600">We help you develop a comprehensive digital strategy to transform your business operations and customer experiences.</p>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-cloud text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Cloud Solutions</h3>
+                    <p class="text-gray-600">Migrate to the cloud with our secure and scalable solutions that enhance performance and reduce costs.</p>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Cybersecurity</h3>
+                    <p class="text-gray-600">Protect your business from cyber threats with our comprehensive security solutions and risk management strategies.</p>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-lg shadow-md p-6 service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Application Development</h3>
+                    <p class="text-gray-600">Custom web and mobile applications built to meet your specific business requirements and drive growth.</p>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-lg shadow-md p-6 service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-database text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Data Analytics</h3>
+                    <p class="text-gray-600">Turn your data into actionable insights with our advanced analytics and business intelligence solutions.</p>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-lg shadow-md p-6 service-card">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-cogs text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">IT Infrastructure</h3>
+                    <p class="text-gray-600">Design and implement robust IT infrastructure solutions that support your business goals and growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Products</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our innovative software products designed to streamline operations across various industries.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 product-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-school text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">School Management</h3>
+                    <p class="text-gray-600 text-center">Comprehensive solution for managing all aspects of educational institutions.</p>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 product-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-book-open text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Learning Management</h3>
+                    <p class="text-gray-600 text-center">Powerful platform for creating, delivering, and tracking online learning programs.</p>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 product-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-warehouse text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Warehouse Management</h3>
+                    <p class="text-gray-600 text-center">Optimize inventory, storage, and logistics operations with our WMS solution.</p>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 product-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-shopping-cart text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">E-commerce Platform</h3>
+                    <p class="text-gray-600 text-center">Complete e-commerce solution to launch and grow your online business.</p>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 product-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-file-invoice text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">ERP System</h3>
+                    <p class="text-gray-600 text-center">Integrated business management software for streamlining operations.</p>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 product-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-users text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">HR Management</h3>
+                    <p class="text-gray-600 text-center">Simplify HR processes from recruitment to payroll with our comprehensive solution.</p>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 product-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">Business Analytics</h3>
+                    <p class="text-gray-600 text-center">Transform data into insights with our powerful analytics and reporting tools.</p>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="bg-white rounded-lg border border-gray-200 p-6 product-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                        <i class="fas fa-tools text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3 text-center">CRM Solution</h3>
+                    <p class="text-gray-600 text-center">Build stronger customer relationships with our comprehensive CRM platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About SSR IT Solution</h2>
+                    <p class="text-gray-600 mb-4">Founded with a vision to deliver Secure, Scalable, and Reliable IT solutions, SSR IT Solution has been at the forefront of digital transformation for businesses across various industries.</p>
+                    <p class="text-gray-600 mb-4">Our team of experienced professionals combines deep industry knowledge with technical expertise to deliver solutions that drive business growth and operational efficiency.</p>
+                    <p class="text-gray-600 mb-6">We pride ourselves on building long-term partnerships with our clients, understanding their unique challenges, and delivering tailored solutions that exceed expectations.</p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm text-center w-32">
+                            <div class="text-2xl font-bold text-blue-600">50+</div>
+                            <div class="text-gray-600 text-sm">Clients</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm text-center w-32">
+                            <div class="text-2xl font-bold text-blue-600">8</div>
+                            <div class="text-gray-600 text-sm">Products</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm text-center w-32">
+                            <div class="text-2xl font-bold text-blue-600">25+</div>
+                            <div class="text-gray-600 text-sm">Team Members</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm text-center w-32">
+                            <div class="text-2xl font-bold text-blue-600">5</div>
+                            <div class="text-gray-600 text-sm">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Our Team" class="rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Get in touch with us to discuss how we can help transform your business with our IT solutions.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 rounded-lg p-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Get In Touch</h3>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Address</h4>
+                                <p class="text-gray-600">123 Tech Park, Innovation Road<br>Business District, City 10001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Phone</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-6">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <p class="text-gray-600">info@ssritsolution.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-clock text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Business Hours</h4>
+                                <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 rounded-lg p-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
+                        
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">SSR IT Solution</h3>
+                    <p class="text-gray-400 max-w-md">Secure, Scalable, and Reliable IT solutions for your business transformation and growth.</p>
+                    <div class="flex mt-6 space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                            <li><a href="#products" class="text-gray-400 hover:text-white transition duration-300">Products</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Digital Strategy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cloud Solutions</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Cybersecurity</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">App Development</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Data Analytics</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Products</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">School Management</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">LMS</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Warehouse Management</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">E-commerce</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">ERP System</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 SSR IT Solution. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        $('#mobile-menu-button').click(function() {
+            $('#mobile-menu').slideToggle();
+        });
+        
+        // Smooth scrolling for navigation links
+        $('a[href*="#"]').on('click', function(e) {
+            e.preventDefault();
+            
+            $('html, body').animate(
+                {
+                    scrollTop: $($(this).attr('href')).offset().top - 80,
+                },
+                500,
+                'linear'
+            );
+        });
+        
+        // Contact form submission
+        $('#contact-form').on('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
 </html>
